@@ -153,32 +153,8 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL.strip("/"))
-
-AWS_ACCESS_KEY_ID = 'AKIAWXGP5VG3ZLIZKEQ5'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_FILE_EXPIRE = 200
-AWS_PRELOAD_METADATA = True
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = 'public-read'
-DEFAULT_FILE_STORAGE = 'ckeditor.backends.s3boto.S3BotoStorage_AllPublic'
-AWS_STORAGE_BUCKET_NAME = 'inquisitively'
-AWS_S3_REGION_NAME = 'us-west-1'
-S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL.strip("/"))
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
-
-two_months = datetime.timedelta(days=61)
-date_two_months_later = datetime.date.today() + two_months
-expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
-
-AWS_HEADERS = {
-    'Expires': expires,
-    'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
-}
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
 
 # MailChimp
 MAILCHIMP_API_KEY = "e3b24b22150c70014e5d2509e60ed24d-us3"
