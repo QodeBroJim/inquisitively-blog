@@ -131,7 +131,7 @@ class S3Boto3Storage(Storage):
         """Retrieves a bucket if it exists, otherwise creates it."""
         try:
             return self.connection.get_bucket(name)
-        except S3ResponseError, e:
+        except S3ResponseError:
             if AUTO_CREATE_BUCKET:
                 return self.connection.create_bucket(name)
             raise ImproperlyConfigured, ("Bucket specified by "
