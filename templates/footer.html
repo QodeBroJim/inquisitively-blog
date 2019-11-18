@@ -1,0 +1,63 @@
+{% load static %}
+
+<!-- Page Footer-->
+<footer class="main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="logo">
+          <a class="font-change" href="/"><h2 class="fa fa-file-code-o"> | Inquisitively</h2></a>
+        </div>
+        <div class="contact-details">
+          <a href="mailto:business@inquisitively.io">
+            <h2 class="fa fa-address-book-o"> | business@inquisitively.io</h2>
+          </a>
+          <ul class="social-menu">
+            <li class="list-inline-item"><a href="https://www.facebook.com/jamesreeves.inquisitivelyio" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/inquisitively.io/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCdwoEUqBuIT47VM1CfpbTjQ/featured?view_as=subscriber" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.pinterest.com/InquisitivelyBlog/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.linkedin.com/in/james-reeves-a24514b6/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="menus d-flex">
+        <div class="footer-font">
+          <ul class="list-unstyled">
+            <li> <a href="/about">About</a></li>
+            <li> <a href="/categories">Article Categories</a></li>
+            <li> <a href="/blog">Blog</a></li>
+            <li> <a href="mailto:business@inquisitively.io">Contact</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="latest-posts">
+          <a href="/access-database">
+            <div class="post d-flex align-items-center">
+              <div class="image"><img src="{% static 'img/inquisitively-logo.jpg' %}" alt="..." class="img-fluid"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyrights">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        {% if year %}
+          <p><i class="far fa-copyright"></i> {{ year }} - inquisitively.io </p>
+        {% else %}
+          <p>
+            <i class="far fa-copyright"></i> 
+            <script>document.write(new Date().getFullYear())</script> - inquisitively.io
+          </p>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}  
+{% load static %}
+
+{% block content %}
+<main class="posts-listing mb-2 mt-2"> 
+<div class="font-change"><h1 class="offset-5 mb-5">Article Categories</h1></div>
+  <div class="container">
+    <div class="row">
+      <!-- categories -->
+      {% for post in queryset %}
+      <div class="post col-xl-6">
+          <div class="post-thumbnail">
+          <div class="font-change"><a class="h4" href="{{ post.title }}">{{ post.title }}</a></div>
+              <a href="{{ post.title }}"><img src="{{ post.image.url }}" alt="..." class="img-fluid"></a>
+          </div>
+          <br />
+          <div class="alt-font-change">
+              <h6>{{ post.description }}</h6>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+<section class="gallery no-padding">    
+  <div class="row">
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'home-page' %}" class="image"><img src="{% static 'img/foot8.jpg' %}" alt="..." class="img">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-home"> | Home</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'post-list' %}" class="image"><img src="{% static 'img/footer2.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-book"> | Blog</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'about-page' %}" class="image"><img src="{% static 'img/footer-about.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-drivers-license"> | About</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="/accounts/signup/" class="image"><img src="{% static 'img/foot-a.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-user-plus"> | Register</h4></div></a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

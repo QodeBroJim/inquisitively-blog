@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <!-- Latest Posts -->
+    <main class="posts-listing col-lg-8"> 
+      <div class="container">
+        <div class="row">
+          <!-- post -->
+          {% for post in queryset %}
+          <div class="post col-xl-6">
+            <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}">
+              <img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a>
+            </div>
+            <div class="post-details">
+              <div class="post-meta d-flex justify-content-left">
+                {% for cat in post.categories.title %}
+                <div class="category"><a href="{% url 'post-categories' %}">{{ cat }}</a></div>
+                {% endfor %}
+              </div>
+              <a href="{{ post.get_absolute_url }}">
+                <div class="font-change"><h3 class="h4">{{ post.title }}</h3>
+              </a></div>
+              <p class="text-muted">{{ post.overview }}</p>
+              <footer class="post-footer d-flex align-items-center">
+              <a href="#" class="author d-flex align-items-center flex-wrap">
+                  <div class="avatar"><img src="{{ post.author.profile_picture.url }}" alt="..." class="img-fluid"></div>
+                  <div class="title"><span>{{ post.author.user.username }}</span></div>
+              </a>
+                <div class="date"><i class="icon-clock"></i>{{ post.timestamp|timesince }} ago</div>
+                <div class="comments meta-last"><i class="icon-comment"></i>{{ post.comment_count }}</div>
+              </footer>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-template d-flex justify-content-center">
+            {% if queryset.has_previous %}
+            <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.previous_page_number }}" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+            {% endif %}
+            <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.number }}" class="page-link active">{{ queryset.number }}</a></li>
+            {% if queryset.has_next %}
+            <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.next_page_number }}" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </main>
+    {% include 'sidebar.html' with most_recent=most_recent category_count=category_count tag_count=tag_count %}
+  </div>
+</div>
+<section class="gallery no-padding">    
+  <div class="row">
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'home-page' %}" class="image"><img src="{% static 'img/foot8.jpg' %}" alt="..." class="img">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-home"> | Home</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'post-list' %}" class="image"><img src="{% static 'img/footer2.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-book"> | Blog</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'about-page' %}" class="image"><img src="{% static 'img/footer-about.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-drivers-license"> | About</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="/accounts/signup/" class="image"><img src="{% static 'img/foot-a.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-user-plus"> | Register</h4></div></a></div>
+    </div>
+  </div>
+</section>   
+{% endblock content %}

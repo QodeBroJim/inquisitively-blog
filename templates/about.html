@@ -1,0 +1,45 @@
+{% extends 'base.html' %}  
+
+{% load static %}
+
+{% block content %}
+    <section style="background: url({% static 'img/about3.jpg' %}); background-size: cover; background-position: center top;" class="about-me">
+        <div class="row">
+          <div class="col-md-7">
+            <p><h2 class="abouts"><em>Bringing easy learning to your screens.</em></h2></p>
+              <div class="aboutit">
+                <p><h5>By spreading free and resourceful content, we believe that 
+                we are empowering the community of learners and helping them 
+                transform their lives for good.</h5></p>
+
+                <p><h5>Inquisitively is a platform set up for the class of readers 
+                who prefer online content over anything else and respond to it in 
+                a better, more receptive manner. </h5></p>
+
+                <p><h5>Our journey started back in 2018 where our passion to satisfy 
+                the inquisitive minds, those always curious, to learn more about programming, 
+                software development and databases, was materialised. We are driven by our 
+                belief in education for all, irrespective of gender, economic status or geography, 
+                and this has resulted in fruitful outcomes over time. </h5></p>
+
+                <br/>
+
+                <p><h5>Our Mission is straightforward and on-point, which is to:</h5></p>
+                  <p style="margin-left: 40px"><strong>1. Deliver high quality learning material for free;</strong></p>
+                  <p style="margin-left: 40px"><strong>2. Keep readers up to date on current technology trends;</strong></p>
+                  <p style="margin-left: 40px"><strong>3. Create widespread opportunities;</strong></p>
+                  <p style="margin-left: 40px"><strong>4. Spread prosperity beyond boundaries;</strong></p>
+                  <p style="margin-left: 40px"><strong>5. And give free career growth advice;</strong></p>
+                <a href="/accounts/signup/" style="margin-left: 80px" class="hero-link"><h6>Join Us</h6></a>
+
+                <p><h5><em>“With free access to online learning platforms, anyone belonging to any place can have their 
+                skills developed and mindset groomed. We at Inquisitively strive to transform the lives of many in a 
+                meaningful, more significant manner. Our resourceful content has by and far shaped the future of many 
+                and we constantly strive to achieve lots more beyond that.”</em></p>
+                <p style="margin-left: 40px"><strong>– James Reeves, Founder</strong></p>
+
+              </div>
+          </div>
+        </div>
+    </section>
+{% endblock content %}

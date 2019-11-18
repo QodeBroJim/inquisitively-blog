@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% include 'scripts.html' %}
+{% block content %}
+
+<div class="access-title">
+    <div class="font-change">
+        <h1>Enjoy Your Free Employee Management System!</h1>
+    </div>
+</div>
+<section style="background: url({% static 'img/download-background.jpg' %}); background-size: cover; background-position: center bottom;" class="db-download">
+<main class="posts-listing mb-2 mt-2"> 
+<div class="container-download">
+    <div class="row-download">
+        <div class="download-button">
+        <a download href="https://drive.google.com/uc?export=download&id=1VQAfrXHccidyNE0DT4UDqoA2EaEOZ8yQ">
+        <i class="fas fa-download"></i> | Download Application</a>
+    </div>
+</div>
+</main>
+</section>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}  
+{% load static %}
+
+{% block content %}
+
+<div class="font-change"><h2 class="offset-4 mb-3 mt-5">Here are the results of your search</h2></div>
+
+<main class="posts-listing mb-2 mt-2"> 
+    <div class="container">
+    <div class = "row">
+
+        {% for post in queryset %}
+        <div class="post col-xl-6">
+            <div class="post-thumbnail">
+                <a href="{{ post.get_absolute_url }}">
+                <img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid">
+                </a>
+            </div>
+            <br />
+            <div class="font-change">
+                <a href="{{ post.get_absolute_url }}">
+                    <h3 class="h4">{{ post.title }}</h3>
+                    <p class="h4">{{ post.overview }}</p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</main>
+{% endblock %}

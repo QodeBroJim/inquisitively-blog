@@ -1,0 +1,65 @@
+<style>
+    a:hover {
+        color: #00B16A;
+    }
+</style>
+<aside class="col-lg-4">
+    <!-- Widget [Search Bar Widget]-->
+    <div class="widget search">
+    <header>
+        <div class="font-change"><h3 class="h4">Search Inquisitively's Articles</h3></div>
+    </header>
+    <form action="{% url 'search' %}" class="search-form">
+        <div class="form-group">
+        <input type="text" name="q" placeholder="What are you looking for?">
+        <button type="submit" class="submit"><i class="icon-search"></i></button>
+        </div>
+    </form>
+    </div>
+    <!-- Widget [Latest Posts Widget]        -->
+    <div class="widget latest-posts">
+    <header>
+        <div class="font-change"><h3 class="h4">Recent Articles</h3></div>
+    </header>
+    <div class="blog-posts">
+        {% for post in most_recent %}
+        <a href="{{ post.get_absolute_url }}">
+        <div class="item d-flex align-items-center">
+            <div class="image"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></div>
+            <div class="title"><div class="font-change"><p class="h5">{{ post.title }}</p></div>
+            <div class="d-flex align-items-center">
+                <div class="views"><i class="icon-eye"></i>{{ post.view_count }}</div>
+                <div class="comments"><i class="icon-comment"></i>{{ post.comment_count }}</div>
+            </div>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    <!-- Widget [Categories Widget]-->
+    <div class="widget categories">
+    <header>
+        <div class="font-change"><h3 class="h4">Categories</h3></div>
+    </header>
+    {% for cat in category_count %}
+    <div class="item d-flex justify-content-between">
+        <div class="font-change">
+            <a href="{% url 'category-view' category_slug=cat.categories__title %}"><p class="h5">{{ cat.categories__title }}</a></p>
+        </div>
+        <span>{{ cat.categories__title__count }}</span>  
+    </div>
+    {% endfor %}
+    </div>
+    <!-- Widget [Tags Cloud Widget]-->
+    <div class="widget tags">
+    <header>
+        <h3 class="h6">Tags</h3>
+    </header>
+    {% for tag in tag_count %}
+    <div class="item d-flex justify-content-between">
+        <a href="{% url 'tag-view' tag_slug=tag.tags__name %}">#{{ tag.tags__name }}</a>
+        <span>{{ tag.tags__name__count }}</span>
+    </div>
+    {% endfor %}
+    </div>
+</aside>
