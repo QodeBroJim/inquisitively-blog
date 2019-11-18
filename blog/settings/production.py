@@ -147,15 +147,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_in_env'),
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
 
 # MailChimp
 MAILCHIMP_API_KEY = "e3b24b22150c70014e5d2509e60ed24d-us3"
