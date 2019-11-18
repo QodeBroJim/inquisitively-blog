@@ -168,8 +168,8 @@ AWS_STORAGE_BUCKET_NAME = 'inquisitively'
 AWS_S3_REGION_NAME = 'us-west-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
+MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL.strip("/"))
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
 
 two_months = datetime.timedelta(days=61)
 date_two_months_later = datetime.date.today() + two_months
