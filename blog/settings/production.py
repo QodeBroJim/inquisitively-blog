@@ -190,16 +190,6 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([
             'codesnippet', 'widget', 'lineutils'
         ]),
-        'codesnippet_languages': {
-            'cs':"C#",
-            'css':"CSS",
-            'html':"HTML",
-            'javascript':"JavaScript",
-            'json':"JSON",
-            'python':"Python",
-            'sql':"SQL",
-            'vbnet': "VBA"
-        }
     }
 }
 
