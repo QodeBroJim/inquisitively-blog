@@ -190,7 +190,7 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([
             'codesnippet', 'widget', 'lineutils'
         ]),
-        'codesnippet_languages' = {
+        'codesnippet_languages': {
             'cs':"C#",
             'css':"CSS",
             'html':"HTML",
