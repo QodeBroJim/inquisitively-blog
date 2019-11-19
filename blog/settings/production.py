@@ -188,18 +188,8 @@ CKEDITOR_CONFIGS = {
         'filebrowserWindowHeight': 725,
         'filebrowserWindowWidth': '100%',
         'extraPlugins': ','.join([
-            'codesnippet', 'widget', 'lineutils'
+            'codesnippet', 'widget', 'lineutils', 'codesnippetgeshi'
         ]),
-    },
-    'codeSnippet_languages': {
-        'cs': 'C#',
-        'css': 'CSS',
-        'html': 'HTML',
-        'javascript': 'JavaScript',
-        'json': 'JSON',
-        'python': 'Python',
-        'sql': 'SQL',
-        'vbnet': '.Net'
     }
 }
 
