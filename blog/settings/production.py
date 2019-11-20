@@ -188,7 +188,7 @@ CKEDITOR_CONFIGS = {
         'filebrowserWindowHeight': 725,
         'filebrowserWindowWidth': '100%',
         'extraPlugins': ','.join([
-            'codesnippet', 'ajax', 'dialog', 'widget', 'lineutils', 'codesnippetgeshi'
+            'codesnippet', 'widget', 'lineutils'
         ]),
     }
 }
