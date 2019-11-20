@@ -155,11 +155,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
 
-# S3 Storage for Static Files - js, css, embedded images
-AWS_S3_BUCKET_AUTH_STATIC = False
-AWS_S3_BUCKET_AUTH = False
-AWS_S3_MAX_AGE_SECONDS = 60 * 60 * 24 * 365 # 1 year.
-
 # S3 Storage for Media Uploads
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 AWS_REGION  = 'us-west-1'
@@ -175,6 +170,12 @@ AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
+# S3 Storage for Static Files - js, css, embedded images
+AWS_S3_BUCKET_AUTH_STATIC = False
+AWS_S3_BUCKET_NAME_STATIC = 'inquisitively'
+AWS_S3_BUCKET_AUTH_STATIC = False
+AWS_S3_MAX_AGE_SECONDS_STATIC = 60 * 60 * 24 * 365 # 1 year.
 
 # MailChimp
 MAILCHIMP_API_KEY = "e3b24b22150c70014e5d2509e60ed24d-us3"
