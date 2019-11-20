@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     #whitenoise for static file management during development
-    'whitenoise.runserver_nostatic',
+    #'whitenoise.runserver_nostatic',
 
     # my created apps
     'marketing',

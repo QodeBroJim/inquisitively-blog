@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     #whitenoise for static file management during development
-    'whitenoise.runserver_nostatic',
+    #'whitenoise.runserver_nostatic',
 
     # my created apps
     'marketing',
@@ -190,27 +190,7 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([
             'codesnippet', 'widget', 'lineutils'
         ]),
-    },
-    'codeSnippet_languages': {
-        'bash':"Bash",
-        'cpp':"C++",
-        'cs':"C#",
-        'css':"CSS",
-        'dart':"Dart",
-        'django':"Django",
-        'go':"Go",
-        'html':"HTML",
-        'javascript':"JavaScript",
-        'json':"JSON",
-        'kotlin':"Kotlin",
-        'matlab':"Matlab",
-        'python':"Python",
-        'sql':"SQL",
-        'swift':"Swift",
-        'typescript':"TypeScript",
-        'vb':"Visual Basic",
-        'xml':"XML"
-        }
+    }
 }
 
 # Crispy Forms
