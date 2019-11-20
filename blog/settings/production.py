@@ -171,7 +171,7 @@ AWS_DEFAULT_ACL = None
 
 # S3 Storage for Static Files - js, css, embedded images
 STATICFILES_STORAGE = 'django_s3_storage.storage.ManifestStaticS3Storage'
-STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_S3_BUCKET_NAME
 AWS_S3_BUCKET_NAME_STATIC = 'inquisitively'
 AWS_S3_BUCKET_AUTH_STATIC = False
 AWS_S3_ADDRESSING_STYLE_STATIC = 'auto'
