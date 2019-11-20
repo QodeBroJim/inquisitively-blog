@@ -191,7 +191,7 @@ CKEDITOR_CONFIGS = {
             'codesnippet', 'widget', 'lineutils'
         ]),
     },
-    'languages': {
+    'codeSnippet_languages': {
         'bash':"Bash",
         'cpp':"C++",
         'cs':"C#",
