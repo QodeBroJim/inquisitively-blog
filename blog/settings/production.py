@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     #whitenoise for static file management during development
-    #'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
 
     # my created apps
     'marketing',
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -91,6 +91,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blog.wsgi.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -149,6 +150,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_in_env'),
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
@@ -168,20 +170,6 @@ AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-
-# S3 Storage for Static Files - js, css, embedded images
-STATICFILES_STORAGE = 'django_s3_storage.storage.ManifestStaticS3Storage'
-STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_S3_BUCKET_NAME
-AWS_S3_BUCKET_NAME_STATIC = 'inquisitively'
-AWS_S3_BUCKET_AUTH_STATIC = False
-AWS_S3_ADDRESSING_STYLE_STATIC = 'auto'
-AWS_S3_MAX_AGE_SECONDS_STATIC = 60 * 60 * 24 * 365 # 1 year.
-AWS_S3_ENCRYPT_KEY_STATIC = False
-AWS_FILE_EXPIRE_STATIC = 200
-AWS_PRELOAD_METADATA_STATIC = True
-AWS_QUERYSTRING_AUTH_STATIC = False
-AWS_S3_FILE_OVERWRITE_STATIC = False
-AWS_DEFAULT_ACL_STATIC = None
 
 # MailChimp
 MAILCHIMP_API_KEY = "e3b24b22150c70014e5d2509e60ed24d-us3"
