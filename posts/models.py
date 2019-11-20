@@ -57,7 +57,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250, unique_for_date='timestamp')
     overview = models.TextField()
     timestamp = models.DateTimeField(auto_now=True)
-    content = RichTextUploadingField(config_name="static_in_env/ckeditor/js/codesnippetsetup.js")
+    content = RichTextUploadingField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     thumbnail = models.ImageField()
     categories = models.ForeignKey(Category,
