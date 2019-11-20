@@ -150,10 +150,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_in_env'),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATICFILES_STORAGE = 'django_s3_storage.storage.ManifestStaticS3Storage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
+
+# S3 Storage for Static Files - js, css, embedded images
+AWS_S3_BUCKET_AUTH_STATIC = False
+AWS_S3_BUCKET_AUTH = False
+AWS_S3_MAX_AGE_SECONDS = 60 * 60 * 24 * 365 # 1 year.
 
 # S3 Storage for Media Uploads
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
