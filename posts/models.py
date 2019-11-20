@@ -59,8 +59,8 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
     content = RichTextUploadingField(external_plugin_resources=[(
                                           'codesnippet',
-                                          '/static_in_env/ckeditor/js/',
-                                          'codesnippetsetup.js',
+                                          '/static_root/ckeditor/ckeditor/plugins/codesnippet/',
+                                          'plugin.js',
                                           )],)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     thumbnail = models.ImageField()
