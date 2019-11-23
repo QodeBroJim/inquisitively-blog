@@ -9,9 +9,7 @@ SECRET_KEY = 'cb0r)9shs576p6_q^1s$x2_k)9qc#&w3n#^-qn4^eeuakn7vam'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
-# ['inquisitively.io', 'www.inquisitively.io', '127.0.0.1']
-
+ALLOWED_HOSTS = ['.herokuapp.com', 'inquisitively.io', 'www.inquisitively.io',]
 
 # Application definition
 
