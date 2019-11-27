@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'cb0r)9shs576p6_q^1s$x2_k)9qc#&w3n#^-qn4^eeuakn7vam'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'allauth.account', # login / logout
     'allauth.socialaccount', #authentication through social media
     
-    #'allauth.socialaccount.providers.discord', # discord authentication
+    'allauth.socialaccount.providers.discord', # discord authentication
     #'allauth.socialaccount.providers.facebook', # fb authentication
     #'allauth.socialaccount.providers.github', # github authentication
     #'allauth.socialaccount.providers.google', # google authentication
@@ -156,8 +156,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static_in_env', 'media-root')
 # S3 Storage for Media Uploads
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 AWS_REGION  = 'us-west-1'
-AWS_ACCESS_KEY_ID = 'AKIAWXGP5VG3ZLIZKEQ5'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_S3_BUCKET_NAME = 'inquisitively'
 AWS_S3_ADDRESSING_STYLE = 'auto'
 AWS_S3_BUCKET_AUTH = False
@@ -170,9 +170,9 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
 # MailChimp
-MAILCHIMP_API_KEY = "e3b24b22150c70014e5d2509e60ed24d-us3"
+MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
 MAILCHIMP_DATA_CENTER = "us3"
-MAILCHIMP_EMAIL_LIST_ID = "6811728356"
+MAILCHIMP_EMAIL_LIST_ID = os.environ.get('MAILCHIMP_EMAIL_LIST_ID')
 
 # CKeditor
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
@@ -207,7 +207,7 @@ EMAIL_HOST = 'smtp.office365.com'
 EMAIL_HOST_USER = 'james@inquisitively.io'
 DEFAULT_FROM_EMAIL = 'registration@inquisitively.io'
 EMAIL_FROM = 'registration@inquisitively.io'
-EMAIL_HOST_PASSWORD = 'Oliver182!'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_SUBJECT_PREFIX = '[Inquisitively] '
 
