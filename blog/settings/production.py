@@ -35,14 +35,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount', #authentication through social media
     
     'allauth.socialaccount.providers.discord', # discord authentication
-    #'allauth.socialaccount.providers.facebook', # fb authentication
-    #'allauth.socialaccount.providers.github', # github authentication
-    #'allauth.socialaccount.providers.google', # google authentication
-    #'allauth.socialaccount.providers.pinterest', # pinterest authentication
-    #'allauth.socialaccount.providers.reddit', # reddit authentication
-    #'allauth.socialaccount.providers.tumblr', # stackexchange authentication
-    #'allauth.socialaccount.providers.twitch', # twitch authentication
-    #'allauth.socialaccount.providers.twitter', # twitter authentication
+    'allauth.socialaccount.providers.facebook', # fb authentication
+    'allauth.socialaccount.providers.github', # github authentication
+    'allauth.socialaccount.providers.google', # google authentication
+    'allauth.socialaccount.providers.pinterest', # pinterest authentication
+    'allauth.socialaccount.providers.reddit', # reddit authentication
+    'allauth.socialaccount.providers.tumblr', # stackexchange authentication
+    'allauth.socialaccount.providers.twitch', # twitch authentication
+    'allauth.socialaccount.providers.twitter', # twitter authentication
     
     'ckeditor', # rich text editor - similar to tinyMCE but was much easier to integrate
     'ckeditor_uploader', #built in media upload tools
