@@ -223,9 +223,13 @@ SOCIALACCOUNT_PROVIDERS =  { 'facebook':
                                 'VERSION': 'v2.4'
                                },
                             'google': 
-                             { 'SCOPE': ['email'],
-                               'AUTH_PARAMS': { 'access_type': 'online' }
-                             }
+                                { 'SCOPE': ['email'],
+                                'AUTH_PARAMS': { 'access_type': 'online' }
+                                },
+                             'pinterest': 
+                                {
+                                'SCOPE': ['read_public', 'read_relationships',]
+                                }
                            }
 
 # Let's Encrypt
