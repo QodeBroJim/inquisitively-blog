@@ -179,7 +179,7 @@ def blog_by_tag(request, tag_slug):
     most_recent = Post.objects.filter(
         status='published').order_by('-timestamp')[:3]
     post_list = Post.objects.filter(
-        tags__slug=tag_slug
+        tags__slug=tag_slug,
         status='published').order_by('-timestamp')
     paginator = Paginator(post_list, 4)
     page_request_var = 'page'
