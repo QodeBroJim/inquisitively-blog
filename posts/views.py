@@ -123,7 +123,7 @@ def blog(request):
     most_recent = Post.objects.filter(
         status='published').order_by('-timestamp')[:3]
     post_list = Post.objects.filter(status='published').order_by('-timestamp')
-    paginator = Paginator(post_list, 4)
+    paginator = Paginator(post_list, 8)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
     try:
@@ -149,7 +149,9 @@ def blog_by_category(request, category_slug):
     year = get_year()
     most_recent = Post.objects.filter(
         status='published').order_by('-timestamp')[:3]
-    post_list = Post.objects.filter(categories__title=category_slug).order_by('-timestamp')[:3]
+    post_list = Post.objects.filter(
+        categories__title=category_slug, 
+        status='published').order_by('-timestamp')[:3]
     paginator = Paginator(post_list, 4)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
@@ -176,7 +178,9 @@ def blog_by_tag(request, tag_slug):
     year = get_year()
     most_recent = Post.objects.filter(
         status='published').order_by('-timestamp')[:3]
-    post_list = Post.objects.filter(tags__slug=tag_slug).order_by('-timestamp')
+    post_list = Post.objects.filter(
+        tags__slug=tag_slug
+        status='published').order_by('-timestamp')
     paginator = Paginator(post_list, 4)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
