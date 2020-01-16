@@ -1,5 +1,33 @@
 {% load static %}
 
+<style>
+  .image img {
+    width: 100%;
+  }
+</style>
+
+<!-- Gallery Section -->
+<section class="gallery no-padding">    
+  <div class="row">
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'home-page' %}" class="image"><img src="{% static 'img/foot8.jpg' %}" alt="..." class="img">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-home"> | Home</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'post-list' %}" class="image"><img src="{% static 'img/footer2.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-book"> | Blog</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="{% url 'about-page' %}" class="image"><img src="{% static 'img/footer-about.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-drivers-license"> | About</h4></div></a></div>
+    </div>
+    <div class="mix col-lg-3 col-md-3 col-sm-6">
+      <div class="item"><a href="/accounts/signup/" class="image"><img src="{% static 'img/foot-a.jpg' %}" alt="..." class="img-fluid">
+          <div class="overlay d-flex align-items-center justify-content-center"><h4 class="fa fa-user-plus"> | Register</h4></div></a></div>
+    </div>
+  </div>
+</section>
+
 <!-- Page Footer-->
 <footer class="main-footer">
   <div class="container">
@@ -35,7 +63,7 @@
       </div>
       <div class="col-md-4">
         <div class="latest-posts">
-          <a href="/access-database">
+          <a href="/">
             <div class="post d-flex align-items-center">
               <div class="image"><img src="{% static 'img/inquisitively-logo.jpg' %}" alt="..." class="img-fluid"></div>
             </div>
