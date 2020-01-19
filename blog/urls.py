@@ -8,7 +8,7 @@ from posts.views import (
                         index, post, post_update, post_delete, 
                         post_create, blog, blog_by_category, blog_by_tag,
                         get_categories, search, about, access_tutorial_landing_page,
-                        db_download,
+                        db_download, contact, privacy_policy,
                         )
 
 
@@ -27,6 +27,8 @@ urlpatterns = [
     path('post/<pk>/', post, name='post-detail'),
     path('post/<pk>/update/', post_update, name='post-update'),
     path('post/<pk>/delete/', post_delete, name='post-delete'),
+    path('privacy/', privacy_policy, name='privacy'),
+    path('contact/', contact, name='contact'),
     path('create/', post_create, name='post-create'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('accounts/', include('allauth.urls')),
