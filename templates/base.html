@@ -9,10 +9,6 @@
 
     {% include 'header.html' %}
 
-<!-- Native Ads by Adsterra -->
-<script async="async" data-cfasync="false" src="//pl15320728.passeura.com/ac1333dc8693688383215d9d36441e0b/invoke.js"></script>
-<div id="container-ac1333dc8693688383215d9d36441e0b"></div>
-
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -22,6 +18,10 @@
     {% endif %}
 
     {% block content %}
+
+    <!-- Native Ads by Adsterra -->
+<script async="async" data-cfasync="false" src="//pl15320728.passeura.com/ac1333dc8693688383215d9d36441e0b/invoke.js"></script>
+<div id="container-ac1333dc8693688383215d9d36441e0b"></div>
 
     {% endblock content %}
 
