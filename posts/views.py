@@ -207,7 +207,7 @@ def post(request, pk):
     most_recent = Post.objects.filter(status='published').order_by('-timestamp')[:3]
     post = get_object_or_404(Post, slug=pk)
 
-    if request.user:
+    if request.user.is_authenticated:
         PostView.objects.get_or_create(user=request.user, post=post)
 
     form = CommentForm(request.POST or None)
