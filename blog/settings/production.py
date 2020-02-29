@@ -51,8 +51,6 @@ INSTALLED_APPS = [
 
     'django_social_share', # app to implement sharing content via social media sites
 
-    'hitcount' - # tracks the number of "hits" an object gets
-
     'taggit', #similar to categories; adds more SEO to the site
 ]
 
