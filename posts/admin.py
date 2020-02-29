@@ -31,6 +31,6 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(PostView)
 class PostView(admin.ModelAdmin):
     list_display = ('user', 'post',)
-    ordering = ('post')
+    ordering = ('post',)
 
 admin.site.register(Author)
