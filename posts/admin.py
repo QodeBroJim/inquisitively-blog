@@ -27,6 +27,10 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('content', 'post', 'timestamp', 'user')
     ordering = ('-timestamp',)
 
-    
-admin.site.register(PostView)
+
+@admin.register(PostView)
+class PostView(admin.ModelAdmin):
+    list_display = ('user', 'post',)
+    ordering = ('post')
+
 admin.site.register(Author)
