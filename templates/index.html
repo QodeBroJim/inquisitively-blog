@@ -96,13 +96,13 @@
         <div class="post-details">
           <div class="post-meta d-flex justify-content-between">
             <div class="date">{{ obj.timestamp }}</div>
-            <div class="post-meta d-flex justify-content-between">
+        
               <div class="index-font">
                 {% for cat in obj.categories.title %}
                   <a href="{% url 'post-categories' %}" >{{ cat }}</p>
                 {% endfor %}
               </div>
-            </div>
+            
           </div><a href="{{ obj.get_absolute_url }}">
             <h3 class="font-change">{{ obj.title }}</h3></a>
           <p class="text-muted">{{ obj.overview }}</p>
