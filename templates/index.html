@@ -98,9 +98,9 @@
             <div class="date">{{ obj.timestamp }}</div>
             <div class="post-meta d-flex align-content-right">
                 {% for cat in obj.categories.title %}
-                <div class="category">
-                <a href="{% url 'post-categories' %}" >{{ cat.replace(',', '') }}</p>
-                </div>
+                
+                <a href="{% url 'post-categories' %}" >{{ cat }}</p>
+                
                 {% endfor %}
             </div>
           </div><a href="{{ obj.get_absolute_url }}">
