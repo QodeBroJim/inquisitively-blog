@@ -99,7 +99,7 @@
             <div class="post-meta d-flex align-content-right">
                 {% for cat in obj.categories.title %}
                 <div class="category">
-                <a href="{% url 'post-categories' %}" >{{ cat }}</p>
+                <a href="{% url 'post-categories' %}" >{{ cat.replace(',', '') }}</p>
                 </div>
                 {% endfor %}
             </div>
