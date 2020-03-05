@@ -97,7 +97,7 @@
           <div class="post-meta d-flex justify-content-between">
             <div class="date">{{ obj.timestamp }}</div>
             <div class="post-meta d-flex align-content-right">
-                {% for cat in obj.categories.title %}
+                {% for cat in obj.categories %}
                 <div class="category">
                 <a href="{% url 'post-categories' %}" >{{ cat.title }}</p>
                 </div>
