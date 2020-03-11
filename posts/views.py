@@ -209,8 +209,6 @@ def post(request, pk):
 
     if request.user.is_authenticated:
         PostView.objects.get_or_create(user=request.user, post=post)
-    elif request.session:
-        PostView.objects.get_or_create(user=request.user, post=post)
 
     form = CommentForm(request.POST or None)
     if request.method == 'POST':
